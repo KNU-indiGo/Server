@@ -18,7 +18,7 @@ public class PySocketHandler extends TextWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception{
         String payload = message.getPayload();
-        log.info("payload : " + payload);
+        log.info("사람수 : " + payload);
 
         for(WebSocketSession sess: list){
             sess.sendMessage(message);
@@ -29,7 +29,6 @@ public class PySocketHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception{
         list.add(session);
-
         log.info(session + " Client connected");
     }
 

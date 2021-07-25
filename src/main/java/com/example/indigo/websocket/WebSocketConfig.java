@@ -14,6 +14,6 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry){
-        registry.addHandler(handler,"").setAllowedOrigins("*");
+        registry.addHandler(handler,"/python").setAllowedOrigins("*");
     }
 }
