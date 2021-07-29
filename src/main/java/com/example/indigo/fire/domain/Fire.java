@@ -6,11 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
 @Entity
-@Access(AccessType.FIELD)
 public class Fire extends BaseTimeEntity {
 
     // Primary Key of Fire
@@ -20,7 +20,6 @@ public class Fire extends BaseTimeEntity {
 
     // 3 Statuses of Fire(Break out, Contain, Put out)
     @Enumerated(EnumType.STRING)
-    @Column(length = 8)
     private FireStatus status;
 
     private String building_name;
@@ -31,11 +30,15 @@ public class Fire extends BaseTimeEntity {
 
     private String longitude;
 
+    private LocalDateTime breakOutTime;
+
+    private LocalDateTime containTime;
+
+    private LocalDateTime putOutTime;
+
     private String cam_url;
 
-    private Integer people_num;
-
-    public Fire(AddForm form){
+    public Fire(AddForm form) {
 
         // default status is SAFE
         this.status = FireStatus.SAFE;
@@ -46,20 +49,28 @@ public class Fire extends BaseTimeEntity {
         this.latitude = form.getLatitude();
         this.longitude = form.getLongitude();
         this.cam_url = form.getCam_url();
-
-        //default people number is zero
-        this.people_num = 0;
     }
 
-    public void setStatus(FireStatus status) {
-        this.status = status;
+    public void setBreakOut() {
+        this.status = FireStatus.BREAKOUT;
+        this.breakOutTime = LocalDateTime.now();
     }
 
-    public boolean isContain(){
+    public void setContain() {
+        this.status = FireStatus.CONTAIN;
+        this.containTime = LocalDateTime.now();
+    }
+
+    public void setPutOut() {
+        this.status = FireStatus.PUTOUT;
+        this.putOutTime = LocalDateTime.now();
+    }
+
+    public boolean isContain() {
         return this.status == FireStatus.CONTAIN;
     }
 
-    public boolean isPutOut(){
+    public boolean isPutOut() {
         return this.status == FireStatus.PUTOUT;
     }
 }

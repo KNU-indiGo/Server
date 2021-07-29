@@ -9,11 +9,11 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @Configuration
 @RequiredArgsConstructor
 @EnableWebSocket
-public class WebSocketConfig implements WebSocketConfigurer {
-    private final PySocketHandler handler;
+public class SocketConfig implements WebSocketConfigurer {
+    private final SocketHandler handler;
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry){
-        registry.addHandler(handler,"/python").setAllowedOrigins("*");
+        registry.addHandler(handler,"/ws").setAllowedOrigins("*");
     }
 }

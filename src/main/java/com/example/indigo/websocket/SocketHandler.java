@@ -12,7 +12,7 @@ import java.util.List;
 
 @Component
 @Log4j2
-public class PySocketHandler extends TextWebSocketHandler {
+public class SocketHandler extends TextWebSocketHandler {
     private static List<WebSocketSession> list = new ArrayList<>();
 
     @Override
