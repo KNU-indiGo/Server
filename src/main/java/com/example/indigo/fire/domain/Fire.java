@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -38,6 +39,9 @@ public class Fire extends BaseTimeEntity {
 
     private String cam_url;
 
+    @ElementCollection
+    private List<String> image_url;
+
     public Fire(AddForm form) {
 
         // default status is SAFE
@@ -49,6 +53,7 @@ public class Fire extends BaseTimeEntity {
         this.latitude = form.getLatitude();
         this.longitude = form.getLongitude();
         this.cam_url = form.getCam_url();
+        this.image_url = form.getImage_url();
     }
 
     public void setBreakOut() {
