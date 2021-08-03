@@ -11,7 +11,7 @@
 
 ## Package
 
-![image](https://user-images.githubusercontent.com/31034469/128059919-e5a94094-8026-48dc-ab36-412b5f9b64a3.png)
+![image](https://user-images.githubusercontent.com/31034469/128060859-51a9d676-0c0c-4695-adfc-39f7683c628e.png)
 
 
 ## Tables
