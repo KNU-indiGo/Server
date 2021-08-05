@@ -3,7 +3,7 @@
 
 ## Architecture
 
-![image](https://user-images.githubusercontent.com/31034469/128059112-11c02f4b-92a7-4d5b-a396-e4092b1ee806.png)
+![image](https://user-images.githubusercontent.com/31034469/128427098-49b1bd55-c4f0-45c3-9d54-bd7ae8e4a1bf.png)
 
 ## APIs
 
